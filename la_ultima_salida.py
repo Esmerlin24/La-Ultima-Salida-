@@ -9,6 +9,8 @@ pygame.init()
 
 # creo mi ventana y la velocidad que va a tener mi jugador 
 
+
+
 Ancho = 600
 Alto = 500
 Titulo = "La Última Salida"
