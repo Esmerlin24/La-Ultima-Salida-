@@ -5,27 +5,28 @@ import pygame
 
 # Voy a crear mi clase llamada Game 
 
-import pygame
-
 class Game:
     # cree mi contructor para ejecutar Game(Pantalla)
-    def __init__(self, Pantalla):
-        self.Pantalla = Pantalla
-        self.Estado = "MENU"
 
+    def __init__(self, Pantalla):
+        self.Pantalla = Pantalla #guardo pantalla
+        self.Estado = "MENU" # utilice esta variable para controlar en que parte del juego estoy.
+
+
+# la funsion para los eventos del teclado y mouse
     def Handle_Events(self, Eventos):
-        for Evento in Eventos:
-            if Evento.type == pygame.KEYDOWN:
-                if Evento.key == pygame.K_RETURN:
+        for Evento in Eventos: # Para recorrer cada evento
+            if Evento.type == pygame.KEYDOWN: # para detectar si se presiono una tecla.
+                if Evento.key == pygame.K_RETURN: # si fue la tecla enter.
                     if self.Estado == "MENU":
                         self.Estado = "JUGANDO"
-
+# El metodo para actualizar la logica del juego
     def Update(self):
-        if self.Estado == "JUGANDO":
+        if self.Estado == "JUGANDO": # Para actualizar las cosas solo si se esta jugando.
             pass
-
+# Para dibujar todo en mi pantalla 
     def Draw(self):
-        if self.Estado == "MENU":
-            self.Pantalla.fill((30, 30, 60))
-        elif self.Estado == "JUGANDO":
-            self.Pantalla.fill((0, 0, 0))
+        if self.Estado == "MENU": # Si estamos en menu
+            self.Pantalla.fill((124, 252, 0)) # Color de la pantalla en menu
+        elif self.Estado == "JUGANDO": # si estamos jugando
+            self.Pantalla.fill((0, 0, 0)) # La pantalla es negra
