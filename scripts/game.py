@@ -3,11 +3,12 @@
 
 import pygame 
 
-# Voy a crear mi clase llamada Juego 
+# Voy a crear mi clase llamada Game 
 
 import pygame
 
 class Game:
+    # cree mi contructor para ejecutar Game(Pantalla)
     def __init__(self, Pantalla):
         self.Pantalla = Pantalla
         self.Estado = "MENU"
